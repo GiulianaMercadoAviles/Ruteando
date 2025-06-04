@@ -1,0 +1,5 @@
+ERROR 403 This action is unauthorized.
+
+El error 403 - This action is unauthorized en Laravel Breeze generalmente ocurre cuando el usuario no tiene los permisos adecuados para realizar una acción.
+
+Se tiene que cambiar el valor que retorna la funcion authorize de los Request a true para permitir las acciones
