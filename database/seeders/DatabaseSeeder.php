@@ -25,8 +25,8 @@ class DatabaseSeeder extends Seeder
 
         // Create a default user
         User::create([
-            'name' => 'Giuliana Mercado Aviles',
-            'email' => 'giulianamercado43@gmail.com',
+            'name' => 'Admin',
+            'email' => 'admintest@gmail.com',
             'password' => bcrypt('12345678'),
         ]);
     }
