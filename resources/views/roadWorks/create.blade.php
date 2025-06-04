@@ -28,20 +28,20 @@
                             </select>
                         </div>
 
-                    <div class="mb-4">
-                        <label for="start_date" class="block text-gray-700 text-sm font-bold mb-2">Fecha de Inicio:</label>
-                        <input type="date" name="start_date" id="start_date" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-grey-600 sm:text-sm/6" required>
-                    </div>
+                        <div class="mb-4">
+                            <label for="start_date" class="block text-gray-700 text-sm font-bold mb-2">Fecha de Inicio:</label>
+                            <input type="date" name="start_date" id="start_date" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-grey-600 sm:text-sm/6" required>
+                        </div>
 
-                    <div class="mb-4">
-                        <label for="planned_end_date" class="block text-gray-700 text-sm font-bold mb-2">Fecha de Fin Estimada:</label>
-                        <input type="date" name="planned_end_date" id="planned_end_date" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-grey-600 sm:text-sm/6" required>
-                    </div>
+                        <div class="mb-4">
+                            <label for="planned_end_date" class="block text-gray-700 text-sm font-bold mb-2">Fecha de Fin Estimada:</label>
+                            <input type="date" name="planned_end_date" id="planned_end_date" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-grey-600 sm:text-sm/6" required>
+                        </div>
 
-                    <button type="submit" class="bg-[#686D76] text-white px-3 py-2 text-sm rounded hover:bg-[#45474B]">
-                        {{ __('Registrar') }}
-                    </button>
-                </form>
+                        <button type="submit" class="bg-[#686D76] text-white px-3 py-2 text-sm rounded hover:bg-[#45474B]">
+                            {{ __('Registrar') }}
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

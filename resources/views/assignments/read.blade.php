@@ -44,6 +44,7 @@
             </table>
         </div>
     </div>
+
     <div class="max-w-8xl mx-auto px-14 sm:px-16 lg:px-20">
         <div class="p-6 sm:p-10 bg-white dark:bg-gray-800 shadow-lg rounded-lg flex flex-col items-center overflow-x-auto w-full">
             <h2 class="pb-6 text-lg font-semibold">Asignaciones Pasadas</h2>
@@ -87,6 +88,7 @@
             </form>
         </div>
     </div>
+    
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         {{ $assignments->links() }}
     </div>

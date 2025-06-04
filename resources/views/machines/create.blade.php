@@ -49,11 +49,13 @@
                         </div>
 
                         <button type="submit" class="bg-[#686D76] text-white px-3 py-2 text-sm rounded hover:bg-[#45474B]">Registrar</button>
+
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -63,4 +65,5 @@
             </ul>
         </div>
     @endif
+    
 </x-app-layout>

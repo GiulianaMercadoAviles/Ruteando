@@ -35,41 +35,41 @@
             <button onclick="filterMachines('Fuera de servicio')" class="bg-[#686D76] text-white px-3 py-2 text-sm rounded hover:bg-[#45474B]">Fuera de Servicio</button>
         </div>
 
-    @if ($machines->isEmpty() && $notAvailableMachines->isEmpty())
-        <div class="text-center py-8">
-            <p class="text-gray-600">No hay máquinas registradas.</p>
-        </div>
-    @endif
+        @if ($machines->isEmpty() && $notAvailableMachines->isEmpty())
+            <div class="text-center py-8">
+                <p class="text-gray-600">No hay máquinas registradas.</p>
+            </div>
+        @endif
 
-    @if ($machines->isNotEmpty() || $notAvailableMachines->isNotEmpty())
-        <div id="machines-list" class="py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
-            @foreach ($machines as $machine)
-                @include('components.machine-card', ['machine' => $machine])
-            @endforeach
-        </div>
-        <div id="machines-list" class="py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
-            @foreach ($notAvailableMachines as $machine)
-                @include('components.machine-card', ['machine' => $machine])
-            @endforeach
-        </div> 
-    </div>
-
-    <script>
-        function filterMachines(status = '') {
-            document.querySelectorAll('.machine-card').forEach(card => {
-                card.style.display = status === '' || card.dataset.status === status ? 'flex' : 'none';
-            });
-        }
-    </script>
-    @endif
-
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
+        @if ($machines->isNotEmpty() || $notAvailableMachines->isNotEmpty())
+            <div id="machines-list" class="py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
+                @foreach ($machines as $machine)
+                    @include('components.machine-card', ['machine' => $machine])
                 @endforeach
-            </ul>
+            </div>
+            <div id="machines-list" class="py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
+                @foreach ($notAvailableMachines as $machine)
+                    @include('components.machine-card', ['machine' => $machine])
+                @endforeach
+            </div> 
         </div>
-    @endif
+
+        <script>
+            function filterMachines(status = '') {
+                document.querySelectorAll('.machine-card').forEach(card => {
+                    card.style.display = status === '' || card.dataset.status === status ? 'flex' : 'none';
+                });
+            }
+        </script>
+        @endif
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 </x-app-layout>

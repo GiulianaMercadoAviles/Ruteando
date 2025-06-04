@@ -41,6 +41,7 @@
                 </div>
             </div>
         @endforeach
+        
         <div class="max-w-6xl mx-auto px-12 sm:px-16 lg:px-20">
             {{ $roadWorks->links() }}
         </div>

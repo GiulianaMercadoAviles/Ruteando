@@ -36,7 +36,7 @@
 
             <div class="p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg flex items-center justify-center">
                 <a href="{{ route('maintenances.edit', $maintenances->id) }}" class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600">
-                    ✏️ Editar Mantenimiento
+                    Editar Mantenimiento
                 </a>
             </div>
         </div>

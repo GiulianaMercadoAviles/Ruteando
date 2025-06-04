@@ -27,6 +27,8 @@ Route::get('/accesoDenegado', function () {
 
 require __DIR__.'/auth.php';
 
+// Rutas de Maquinas Viales
+
 Route::controller(MachineController::class)->prefix('machines')->group(function () {
     Route::get('/read', 'index')->name('machines');
     Route::get('/create', 'create')->name('machines.create');
@@ -39,6 +41,8 @@ Route::controller(MachineController::class)->prefix('machines')->group(function 
     Route::get('/history/{id}', 'history')->name('history');
 });
 
+// Rutas de Mantenimientos
+
 Route::controller(MaintenanceController::class)->prefix('maintenances')->group(function () {
     Route::get('/read', 'index')->name('maintenances');
     Route::get('/create', 'create')->name('maintenances.create');
@@ -49,6 +53,7 @@ Route::controller(MaintenanceController::class)->prefix('maintenances')->group(f
     Route::get('/search', 'search')->name('maintenances.search');
 }); 
 
+// Rutas de Obras Viales
 
 Route::controller(RoadWorkController::class)->prefix('roadWorks')->group(function () {
     Route::get('/read', 'index')->name('roadWorks');
@@ -61,6 +66,8 @@ Route::controller(RoadWorkController::class)->prefix('roadWorks')->group(functio
     Route::post('/destroy/{id}', 'destroy')->name('roadWorks.destroy');   
     Route::get('/search', 'search')->name('roadWorks.search');
 });
+
+// Rutas de Asignaciones
 
 Route::controller(AssignmentController::class)->prefix('assignments')->group(function () {
     Route::get('/read', 'index')->name('assignments');

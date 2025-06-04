@@ -29,7 +29,6 @@ class MachineController extends Controller
             ->get();
             
         return view('machines.read', compact('machines', 'notAvailableMachines'));
-
     }
 
     /**
@@ -109,7 +108,7 @@ class MachineController extends Controller
         $statuses = Status::all();
 
         return view('machines.update', compact('machine', 'type_machines', 'statuses'));
-}
+    }
         
     /**
      * Update the specified resource in storage.

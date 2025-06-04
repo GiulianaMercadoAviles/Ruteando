@@ -7,4 +7,7 @@
     - Kilómetros actuales: {{ $kilometers }}  
     - Límite permitido: {{ $kilometersLimit }}
 
+    Muchas gracias,
+    {{ config('app.name')}}
+
 </x-mail::message>

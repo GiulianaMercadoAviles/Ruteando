@@ -57,15 +57,7 @@ class AssignmentController extends Controller
 
         return redirect()->route('assignments')->with('success', 'La asignación se ha creado correctamente.');
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Assignment $assignment)
-    {
-        //
-    }
-
+    
     /**
      * Show the form for editing the specified resource.
      */
@@ -86,7 +78,6 @@ class AssignmentController extends Controller
      */
     public function update(UpdateAssignmentRequest $request, $assignment_id) 
     {
-
         Assignment::where('id', $assignment_id)->update($request->validated());
 
         return redirect()->route('assignments')->with('success', 'Se ha actualizado la asignación correctamente.');
@@ -125,20 +116,17 @@ class AssignmentController extends Controller
     }
 
     public function history(Request $request)
-{
-    $request->validate([
-        'month' => 'required|date_format:Y-m',
-    ]);
+    {
+        $request->validate(['month' => 'required|date_format:Y-m',]);
 
+        $month = $request->input('month');
+        $start = $month . '-01';
+        $end = date("Y-m-t", strtotime($start));
 
-    $month = $request->input('month');
-    $start = $month . '-01';
-    $end = date("Y-m-t", strtotime($start));
+        $assignments = Assignment::with('machine', 'roadWork', 'endReason', 'machine.type_machine', 'roadWork.province')->whereBetween('start_date', [$start, $end])->get();
 
-    $assignments = Assignment::with('machine', 'roadWork', 'endReason', 'machine.type_machine', 'roadWork.province')->whereBetween('start_date', [$start, $end])->get();
+        $pdf = Pdf::loadView('historyAssignment', compact('assignments', 'month'));
 
-    $pdf = Pdf::loadView('historyAssignment', compact('assignments', 'month'));
-
-    return $pdf->download('resumen_asignaciones_' . $month . '.pdf');
-}
+        return $pdf->download('resumen_asignaciones_' . $month . '.pdf');
+    }
 }

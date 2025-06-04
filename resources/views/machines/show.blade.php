@@ -6,7 +6,6 @@
         <a href="{{ route('machines') }}" class="bg-[#686D76] text-white px-3 py-2 text-sm rounded hover:bg-[#45474B]">Listado de Maquinas</a>
     </x-slot>
 
-    
     <div class="py-8 space-y-6">
         <div class="max-w-8xl mx-auto px-14 sm:px-16 lg:px-20 grid grid-cols-1 md:grid-cols-3 gap-6">
 
@@ -26,32 +25,43 @@
                 </div>
             </div>
 
-        <div class="max-w-8xl mx-auto px-14 sm:px-16 lg:px-20">
-            <div class="p-4 sm:p-10 bg-white dark:bg-gray-800 shadow-lg rounded-lg flex flex-col">
-                <div>
-                    <div class="px-4 sm:px-0">
-                        <h2 class="pb-3 text-lg font-semibold">Asignación Actual</h2>
-                        <p class="mt-1 max-w-2xl text-sm/6 text-gray-500">Detalles de la asignación.</p>
-                    </div>
-                    <div class="mt-4 border-t border-gray-100">
-                        <dl class="divide-y divide-gray-100">
-                        <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt class="text-sm/6 font-medium text-gray-900">Nombre de la Obra Vial</dt>
-                            <dd class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $assignmentActive->roadwork->name }}</dd>
+        @if($assignmentActive)
+            <div class="max-w-8xl mx-auto px-14 sm:px-16 lg:px-20">
+                <div class="p-4 sm:p-10 bg-white dark:bg-gray-800 shadow-lg rounded-lg flex flex-col">
+                    <div>
+                        <div class="px-4 sm:px-0">
+                            <h2 class="pb-3 text-lg font-semibold">Asignación Actual</h2>
+                            <p class="mt-1 max-w-2xl text-sm/6 text-gray-500">Detalles de la asignación.</p>
                         </div>
-                        <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt class="text-sm/6 font-medium text-gray-900">Provincia</dt>
-                            <dd class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $assignmentActive->roadwork->province->name }}</dd>
+                        <div class="mt-4 border-t border-gray-100">
+                            <dl class="divide-y divide-gray-100">
+                            <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                <dt class="text-sm/6 font-medium text-gray-900">Nombre de la Obra Vial</dt>
+                                <dd class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $assignmentActive->roadwork->name }}</dd>
+                            </div>
+                            <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                <dt class="text-sm/6 font-medium text-gray-900">Provincia</dt>
+                                <dd class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $assignmentActive->roadwork->province->name }}</dd>
+                            </div>
+                            <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                <dt class="text-sm/6 font-medium text-gray-900">Fecha de inicio</dt>
+                                <dd class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $assignmentActive->start_date }}</dd>
+                            </div>
                         </div>
-                        <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt class="text-sm/6 font-medium text-gray-900">Fecha de inicio</dt>
-                            <dd class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $assignmentActive->start_date }}</dd>
-                        </div>
-                        
                     </div>
                 </div>
             </div>
-        </div>
+        @else
+            <div class="max-w-8xl mx-auto px-14 sm:px-16 lg:px-20">
+                <div class="p-4 sm:p-10 bg-white dark:bg-gray-800 shadow-lg rounded-lg flex flex-col">
+                    <div>
+                        <p>No hay asignación activa para esta máquina.</p>
+                    </div>
+                </div>
+            </div>
+            
+        @endif
+        
         <div class="max-w-8xl mx-auto px-14 sm:px-16 lg:px-20">
             <div class="p-6 sm:p-10 bg-white dark:bg-gray-800 shadow-lg rounded-lg flex flex-col items-center">        
                 <div class="overflow-x-auto w-full mt-3">

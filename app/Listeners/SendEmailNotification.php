@@ -7,6 +7,8 @@ use App\Mail\MaintenanceNotificationMail;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Mail;
+use App\Models\User;
+
 
 class SendEmailNotification
 {
@@ -23,7 +25,9 @@ class SendEmailNotification
      */
     public function handle(MaintenanceNotification $event): void
     {
-        Mail::to('giulianamercado43@gmail.com')->send(new MaintenanceNotificationMail($event->machine));
+
+        $admin = User::first();
+        Mail::to($admin->email)->send(new MaintenanceNotificationMail($event->machine));
     
     }
 }
