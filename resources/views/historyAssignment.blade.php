@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Historial de Mantenimiento</title>
+    <title>{{ config('app.name') }}</title>
+    <link rel="icon" type="image/png" href="{{ asset('img/logoclaro.png') }}" class="w-full">
     <style>
         body { font-family: Arial, sans-serif; font-size: 14px; color: #333; margin: 20px; }
         h2 { text-align: center; color: #464646; margin-bottom: 24px; }

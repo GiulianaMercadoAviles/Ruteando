@@ -1,3 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+body {
+    background-color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    width: 100%;
+    margin: 0rem;
+    padding: 0rem;
+}
+
+
+
+.logo{
+    height: 4rem;
+    margin: 0rem;
+}

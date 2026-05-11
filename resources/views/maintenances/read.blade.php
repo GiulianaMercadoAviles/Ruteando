@@ -51,7 +51,7 @@
                             )" 
                             class="text-lg font-semibold text-gray-500 hover:text-gray-900">{{ $maintenance->machine->serial_number }}</button>
                             <p class="mt-2 text-sm text-gray-700 dark:text-gray-200">{{ $maintenance->typesMaintenance->name }}</p>
-                            <p class="mt-2 text-sm {{ $maintenance->is_active == 1 ? 'text-green-800' : ' text-orange-800' }}">
+                            <p class="mt-2 text-sm {{ $maintenance->is_active == 1 ? 'text-green-800' : ' text-amber-800' }}">
                                 {{ $maintenance->is_active == 1 ? 'Finalizado' : 'En proceso' }}
                             </p>
 

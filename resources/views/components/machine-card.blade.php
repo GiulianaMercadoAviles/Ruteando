@@ -2,7 +2,7 @@
 $colorClass = match ($machine->status->situation) {
     'Asignado' => 'bg-green-100 text-green-800',
     'No asignado' => 'bg-blue-100 text-blue-800',
-    'En mantenimiento' => 'bg-orange-100 text-orange-800',
+    'En mantenimiento' => 'bg-amber-100 text-amber-800',
     'Fuera de servicio' => 'bg-red-100 text-red-800',
     default => 'bg-gray-100 text-gray-800',
 };
